@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
+using UnityEngine.SceneManagement;
 
 public class LobbyManager : MonoBehaviourPunCallbacks
 {
@@ -65,6 +66,11 @@ public class LobbyManager : MonoBehaviourPunCallbacks
         {
             Debug.Log("Player name is invalid or empty!!");
         }
+    }
+
+    public void OnQuickMatchButtonClicked()
+    {
+        SceneLoader.Instance.LoadScene("Scene_PlayerSelection");
     }
     #endregion
 
