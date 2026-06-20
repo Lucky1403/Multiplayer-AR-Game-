@@ -23,11 +23,20 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     // Start is called before the first frame update
     void Start()
     {
-        UI_lobbyGameObject.SetActive(false);
-        UI_3dGameObject.SetActive(false);
-        UI_ConnectionStatusGameObject.SetActive(false);
-
-        UI_loginGameObject.SetActive(true);
+        if (PhotonNetwork.IsConnected)
+        {
+            UI_lobbyGameObject.SetActive(true);
+            UI_3dGameObject.SetActive(true);
+            UI_ConnectionStatusGameObject.SetActive(false);
+            UI_loginGameObject.SetActive(false);
+        }
+        else
+        {
+            UI_lobbyGameObject.SetActive(false);
+            UI_3dGameObject.SetActive(false);
+            UI_ConnectionStatusGameObject.SetActive(false);
+            UI_loginGameObject.SetActive(true);
+        }   
     }
 
     // Update is called once per frame
