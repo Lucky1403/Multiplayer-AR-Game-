@@ -613,6 +613,8 @@ GameObject:
   - component: {fileID: 1802076417471478443}
   - component: {fileID: 6393872077680150885}
   - component: {fileID: 8185330467754555588}
+  - component: {fileID: 1536792850625910444}
+  - component: {fileID: 4155389335980613080}
   m_Layer: 0
   m_Name: Player2_Attacker
   m_TagString: Player
@@ -738,6 +740,41 @@ MonoBehaviour:
   spinSpeed: 3600
   isSpinning: 0
   playerGraphics: {fileID: 1802076418753269999}
+--- !u!114 &1536792850625910444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1802076417471478439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!114 &4155389335980613080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1802076417471478439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40e7a1b6239d06340b5f43270f03811d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerNameText: {fileID: 1802076417369794717}
 --- !u!1 &1802076418753269999
 GameObject:
   m_ObjectHideFlags: 0
