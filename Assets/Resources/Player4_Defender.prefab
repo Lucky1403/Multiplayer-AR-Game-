@@ -365,6 +365,7 @@ GameObject:
   - component: {fileID: 7869769711683506046}
   - component: {fileID: 4559949627694405796}
   - component: {fileID: 9196438468820736812}
+  - component: {fileID: 5491673879934350436}
   m_Layer: 0
   m_Name: Player4_Defender
   m_TagString: Player
@@ -580,6 +581,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3bbf1f6b8c3f624a9f58882ab3c6fb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SynchronizeVelocity: 1
+  SynchronizeAngularVelocity: 1
+  isTeleportEnabled: 1
+  teleportIfDistanceGreaterThan: 1
+--- !u!114 &5491673879934350436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4663518797756989780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4577bdb54954fab43945ebe870d0f90b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spinnerScript: {fileID: 6622775820715045758}
+  spinSpeedBar_Image: {fileID: 4663518798249398227}
+  spinSpeedRatio_Text: {fileID: 6403045122420741532}
 --- !u!1 &4663518798063194202
 GameObject:
   m_ObjectHideFlags: 0
