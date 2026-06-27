@@ -6,9 +6,13 @@ using Photon.Pun;
 using ExitGames.Client.Photon.StructWrapping;
 using TMPro;
 
-public class Battle : MonoBehaviour
+public class Battle : MonoBehaviourPun
 {
     public Spinner spinnerScript;
+    private Rigidbody rb;
+    public GameObject UI_3D_GameObject;
+    public GameObject deathPanelUIPrefab;
+    private GameObject deathPanelUIGameobject;
     private float startSpinSpeed;
     private float currentSpinSpeed;
     public Image spinSpeedBar_Image;
@@ -34,6 +38,7 @@ public class Battle : MonoBehaviour
     void Start()
     {
         CheckPlayerType();
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -91,6 +96,11 @@ public class Battle : MonoBehaviour
         spinSpeedBar_Image.fillAmount = currentSpinSpeed / startSpinSpeed;
 
         spinSpeedRatio_Text.text = currentSpinSpeed.ToString("F0") + "/" + startSpinSpeed;
+
+        if(currentSpinSpeed < 100)
+        {
+            Die();
+        }
     }
 
     private void CheckPlayerType()
@@ -111,5 +121,27 @@ public class Battle : MonoBehaviour
 
             spinSpeedRatio_Text.text = currentSpinSpeed + "/" + startSpinSpeed;
         }
+    }
+
+    void Die()
+    {
+        GetComponent<MovementController>().enabled = false;
+        rb.freezeRotation = false;
+        rb.velocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
+
+        spinnerScript.spinSpeed = 0f;
+        UI_3D_GameObject.SetActive(false);
+
+        if(photonView.IsMine)
+        {
+            StartCoroutine(ReSpawn());
+        }
+    }
+
+    IEnumerator ReSpawn()
+    {
+        GameObject canvasGameObject = GameObject.Find("Canvas")
+        deathPanelUIGameobject = Instantiate(deathPanelUIPrefab, canvasGameObject.transform);
     }
 }
